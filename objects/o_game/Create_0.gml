@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-check_for_player();
+global.mp_grid = 0;

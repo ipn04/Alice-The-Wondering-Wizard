@@ -61,13 +61,15 @@ function check_fire() {
 			
 			var _dir = point_direction(x, y, mouse_x, mouse_y);
 			
-			var _inst = instance_create_layer(100+1*cos(_dir*1)+x, 34+1*sin(_dir*1)+y, "Arrow", o_arrow);
+			var offsetX = 100 * cos(degtorad(aim_dir));
+			var offsetY = 100 * sin(degtorad(aim_dir));
+			var _inst = instance_create_layer(my_wand.x + offsetX, my_wand.y - offsetY, "Arrow", o_arrow);
+			
 			with(_inst) {
 				speed = other.arrow_speed;
 				direction = _dir;
 				image_angle = _dir;
 				owner_id = other;
-				
 			}
 		}
 	}
