@@ -1,7 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-walk_spd = 1.5;
-facing = 1;
+event_inherited();
+walk_spd = 2;
+hp_max = 10;
+hp = hp_max;
+
 aim_dir = 0;
 wand_dis = 22;
 wand_dis_y = 50;
