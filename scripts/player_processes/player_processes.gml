@@ -20,7 +20,7 @@ function calc_movement(){
 	hmove = right - left;
 	vmove = down - up;
 	
-	var _facing = (aim_dir < 90 or aim_dir > 270);
+	_facing = (aim_dir < 90 or aim_dir > 270);
 	if _facing == 0 _facing = -1;
 	facing = _facing;
 	
@@ -33,30 +33,49 @@ function calc_movement(){
 		x += hmove;
 		y += vmove;
 	}
+	x += hsp;
+	y += vsp;
 	
+	switch(state) {
+		default: var _drag = 0.15; break;
+		case states.DEAD: var _drag = 0.08; break;
+	}
+	hsp = lerp(hsp, 0, _drag);
+	vsp = lerp(vsp, 0, _drag);
+	
+}
+
+function aim_wand() {
 	aim_dir = point_direction(x, y, mouse_x, mouse_y);
 	
 	my_wand.image_angle = aim_dir;
 	
-	if (_facing == 1) {
+	if (other._facing == 1) {
 		my_wand.image_yscale = 1;  
-	} else if (_facing == -1) {
+	} else if (other._facing == -1) {
 	    my_wand.image_yscale = -1;   
-	}
+	}	
 }
 
 function anim() {
-	if hmove != 0 or vmove != 0 {
-		sprite_index = s_player_walk;	
-	} else {
-		sprite_index = s_player_idle;
+	switch(state) {
+		default:
+			if hmove != 0 or vmove != 0 {
+				sprite_index = s_player_walk;	
+			} else {
+				sprite_index = s_player_idle;
+			}
+		break;
+		case states.DEAD:
+			sprite_index = s_player_dead;
+		break;
 	}
 }
 
 function check_fire() {
 	if mouse_check_button(mb_left) {
-		if can_fire {
-			can_fire = false;
+		if can_attack {
+			can_attack = false;
 			alarm[0] = fire_rate;
 			
 			var _dir = point_direction(x, y, mouse_x, mouse_y);

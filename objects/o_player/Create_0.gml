@@ -9,10 +9,11 @@ aim_dir = 0;
 wand_dis = 22;
 wand_dis_y = 50;
 fire_rate = 30;
-can_fire = true;
+can_attack = true;
 arrow_speed = 8;
 
 my_wand = instance_create_layer(x, y, "Instances", o_wand);
 
 cursor_sprite = s_cursor;
 window_set_cursor(cr_none);
+ready_to_restart = false;
