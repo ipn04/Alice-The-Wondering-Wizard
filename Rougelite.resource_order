@@ -19,6 +19,7 @@
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"o_ability","order":11,"path":"objects/o_ability/o_ability.yy",},
     {"name":"o_arrow_explode","order":9,"path":"objects/o_arrow_explode/o_arrow_explode.yy",},
     {"name":"o_arrow","order":7,"path":"objects/o_arrow/o_arrow.yy",},
     {"name":"o_enemy_hitbox","order":7,"path":"objects/o_enemy_hitbox/o_enemy_hitbox.yy",},
@@ -31,6 +32,7 @@
     {"name":"enemy_processes","order":2,"path":"scripts/enemy_processes/enemy_processes.yy",},
     {"name":"entity_processes","order":3,"path":"scripts/entity_processes/entity_processes.yy",},
     {"name":"macros_enums","order":4,"path":"scripts/macros_enums/macros_enums.yy",},
+    {"name":"s_ability","order":12,"path":"sprites/s_ability/s_ability.yy",},
     {"name":"s_arrow_explode","order":8,"path":"sprites/s_arrow_explode/s_arrow_explode.yy",},
     {"name":"s_arrow","order":6,"path":"sprites/s_arrow/s_arrow.yy",},
     {"name":"s_cursor","order":3,"path":"sprites/s_cursor/s_cursor.yy",},

@@ -11,3 +11,4 @@ if alarm[HURT] > 0 and flash-- < flash_initial/2 {
 }
 
 show_healthbar();
+show_xp();
