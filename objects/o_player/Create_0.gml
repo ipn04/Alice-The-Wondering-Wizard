@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-walk_spd = 2;
+walk_spd = 5;
 hp_max = 10;
 hp = hp_max;
 is_mc = 1;
@@ -21,3 +21,11 @@ my_wand = instance_create_layer(x, y, "Instances", o_wand);
 cursor_sprite = s_cursor;
 window_set_cursor(cr_none);
 ready_to_restart = false;
+
+camWidth = 1920;
+camHeight = 1080
+
+follow = o_player;
+
+xTo = x;
+yTo = y;

@@ -1,5 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
 function calc_entity_movement() {
 	x += hsp;
 	y += vsp;
@@ -29,33 +30,42 @@ function check_facing() {
 	}
 }
 
-function check_for_player(){
+function check_for_player() {
+    // Exit if the player is dead
+    if (o_player.state == states.DEAD) exit; 
 	
-	if o_player.state == states.DEAD exit; 
-	
-	var _dis = distance_to_object(o_player);
-	 
-	if ((_dis <= alert_dis) or alert) and _dis > attack_dis {
-		alert = true; 
-		if calc_path_timer-- <= 0 {
+    // Set the target position of the enemy to the player's position
+    var target_x = o_player.x;
+    var target_y = o_player.y;
 
-			calc_path_timer = calc_path_delay;
-			
-			if x == xp and y == yp var _type = 0 else var _type = 1;
-		
-			var _found_player = mp_grid_path(global.mp_grid, path, x, y, o_player.x, o_player.y, choose(0, 1));
-		
-			if _found_player {
-				path_start(path, move_spd, path_action_stop, false);	
-			}
-		}
-	} else {
-		if _dis <= attack_dis {
-			path_end();	
-			state = states.ATTACK;
-		}
-	}
+    // Update the enemy's path to move towards the player's position
+    path_start(path, move_spd, path_action_stop, false);
+
+    // Check for attack conditions
+    var _dis = distance_to_object(o_player);
+    if ((_dis <= alert_dis) or alert) and _dis > attack_dis {
+        alert = true; 
+        if calc_path_timer-- <= 0 {
+
+            calc_path_timer = calc_path_delay;
+
+            if x == xp and y == yp var _type = 0 else var _type = 1;
+
+            var _found_player = mp_grid_path(global.mp_grid, path, x, y, o_player.x, o_player.y, choose(0, 1));
+
+            if _found_player {
+                path_start(path, move_spd, path_action_stop, false);
+            }
+        }
+    } else {
+        if _dis <= attack_dis {
+            path_end();
+            state = states.ATTACK;
+        }
+    }
 }
+
+
 	
 function enemy_anim(){
 	switch(state) {
@@ -75,6 +85,12 @@ function enemy_anim(){
 		break;
 		case states.DEAD:
 			sprite_index = s_dead;
+			if (state == states.DEAD) {
+                dead_timer -= 1;
+                if (dead_timer <= 0) {
+                    instance_destroy();
+                }
+			}
 		break;
 	}
 	depth = -bbox_bottom;
@@ -100,6 +116,8 @@ function perform_attack() {
 }
 
 function show_hurt() {
-	if knockback_time-- > 0 sprite_index = s_hurt;
-	
+    if (knockback_time > 0) {
+        sprite_index = s_hurt;
+        knockback_time--; // Decrease knockback time each step
+    }
 }
