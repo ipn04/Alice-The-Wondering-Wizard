@@ -43,7 +43,7 @@ function check_for_player() {
 
     // Check for attack conditions
     var _dis = distance_to_object(o_player);
-    if ((_dis <= alert_dis) or alert) and _dis > attack_dis {
+
         alert = true; 
         if calc_path_timer-- <= 0 {
 
@@ -56,8 +56,7 @@ function check_for_player() {
             if _found_player {
                 path_start(path, move_spd, path_action_stop, false);
             }
-        }
-    } else {
+        } else {
         if _dis <= attack_dis {
             path_end();
             state = states.ATTACK;
