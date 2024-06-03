@@ -94,3 +94,27 @@ function check_fire() {
 	}
 }
 
+function level_up(){
+	if (o_player.experience < o_player.exp_max-1) {
+		o_player.experience += 1;
+	}else{
+	o_player.levelcount += 1;
+	o_player.level += 1;
+	o_player.stocklevel += 1;
+	o_player.experience = 0;
+	o_leveluphandler.levelpause = true;
+	ability_give()
+	if (o_player.levelcount >= 3) {
+            o_player.exp_max += 1;
+            o_player.levelcount = 0;
+        }
+	}
+}
+
+function ability_give(){
+	if(o_player.stocklevel){
+		for (var i = 0; i < o_player.stocklevel; i++) {
+	        show_debug_message("Player Level Up")
+	    }
+	}
+}

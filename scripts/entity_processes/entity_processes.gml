@@ -36,14 +36,7 @@ function is_dead() {
 					if instance_exists(my_wand) instance_destroy(my_wand);
 				break;
 				case o_enemy:
-					if (o_player.experience < o_player.exp_max-1) {
-						o_player.experience += 1;
-					}
-					else {
-						o_player.level += 1;
-						o_player.experience = 0;
-						ability_card();
-					}
+				level_up();
 				break;
 			}
 			return true;
@@ -67,35 +60,5 @@ function show_healthbar() {
         var bar_y2 = bar_y1 + bar_height;
         
         draw_healthbar(bar_x1, bar_y1, bar_x2, bar_y2, hp / hp_max * 100, $003300, $3232FF, $00B200, 0, 1, 1);
-    }
-}
-function show_xp() {   
-   if(is_mc == 1) {
-	draw_text(x-20, y-50, level);
-   }
-}
-
-//ability card
-function ability_card() { 
-	var card_width = 32; // Width of each card
-    var card_height = 32; // Height of each card
-    var gap_size = 400; // Gap between the cards
-    var grid_cols = 3; // Number of columns
-
-    // Calculate the total width of the grid (3 columns)
-    var total_width = grid_cols * card_width + (grid_cols - 1) * gap_size;
-
-    // Calculate the starting x position to center the grid on the screen
-    var start_x = (display_get_width() - total_width) / 4;
-    // Calculate the y position to center the grid vertically
-    var center_y = display_get_height() / 6;
-
-    for (var j = 0; j < grid_cols; j++) {
-        // Calculate the position for each column with gap
-        var pos_x = start_x + j * (card_width + gap_size);
-        var pos_y = center_y - card_height / 2; // Center the card vertically
-
-        // Create the o_ability instance at the calculated position
-        instance_create_layer(pos_x, pos_y, "Instances", o_ability);
     }
 }

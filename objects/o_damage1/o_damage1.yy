@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"o_ability",
+  "%Name":"o_damage1",
   "eventList":[],
   "managed":true,
-  "name":"o_ability",
+  "name":"o_damage1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Entity/Player.yy",
+    "name":"Cards",
+    "path":"folders/Entity/Cards.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_ability",
-    "path":"sprites/s_ability/s_ability.yy",
+    "name":"damage1",
+    "path":"sprites/damage1/damage1.yy",
   },
   "spriteMaskId":{
     "name":"s_ability",
