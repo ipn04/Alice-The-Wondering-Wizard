@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 walk_spd = 5;
-hp_max = 10;
+hp_max = 100;
 hp = hp_max;
 is_mc = 1;
 experience = 0;
@@ -23,7 +23,7 @@ window_set_cursor(cr_none);
 ready_to_restart = false;
 
 camWidth = 1920;
-camHeight = 1080
+camHeight = 1080;
 
 follow = o_player;
 

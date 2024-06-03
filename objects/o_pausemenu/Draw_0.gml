@@ -31,17 +31,17 @@ if (pause) {
 
     // Draw button text
     draw_set_color(c_white);
-    draw_text(button_x + button_width / 2, button_restart_y + button_height / 2, "Continue");
-    draw_text(button_x + button_width / 2, button_continue_y + button_height / 2, "Restart");
+    draw_text(button_x + button_width / 2, button_restart_y + button_height / 2, "Restart");
+    draw_text(button_x + button_width / 2, button_continue_y + button_height / 2, "Continue");
     draw_text(button_x + button_width / 2, button_quit_y + button_height / 2, "Quit");
 
     // Check for button clicks
     if (mouse_check_button_pressed(mb_left)) {
         if (hovering_restart) {
-			instance_activate_all();
 			game_restart();
         } else if (hovering_continue) {
 			pause = false;
+			instance_activate_all();
         } else if (hovering_quit) {
             game_end();
         }
