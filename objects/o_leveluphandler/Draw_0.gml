@@ -2,7 +2,8 @@ var selectedCards = [];
 var cardPool = [o_damage1, o_hp5, o_attackspeed1];
 
 
-if (levelpause) {
+
+if (levelpause  = "yes") {
     var cam_x = camera_get_view_x(view_camera[0]);
     var cam_y = camera_get_view_y(view_camera[0]);
     var cam_w = camera_get_view_width(view_camera[0]);

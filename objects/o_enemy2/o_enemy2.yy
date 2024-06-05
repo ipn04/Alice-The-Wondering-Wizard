@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"s_EnemySpawner",
+  "%Name":"o_enemy2",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"s_EnemySpawner",
+  "name":"o_enemy2",
   "overriddenProperties":[],
   "parent":{
-    "name":"BackStage",
-    "path":"folders/Entity/BackStage.yy",
+    "name":"Enemy",
+    "path":"folders/Entity/Enemy.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_enemy2_par",
+    "path":"objects/o_enemy2_par/o_enemy2_par.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +32,13 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
-  "spriteMaskId":null,
+  "spriteId":{
+    "name":"s_enemy_idle",
+    "path":"sprites/s_enemy_idle/s_enemy_idle.yy",
+  },
+  "spriteMaskId":{
+    "name":"s_enemy_walk",
+    "path":"sprites/s_enemy_walk/s_enemy_walk.yy",
+  },
   "visible":true,
 }

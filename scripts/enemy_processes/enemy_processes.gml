@@ -64,6 +64,40 @@ function check_for_player() {
     }
 }
 
+function check_for_player2() {
+    // Exit if the player is dead
+    if (o_player.state == states.DEAD) exit; 
+	
+    // Set the target position of the enemy to the player's position
+    var target_x = o_player.x;
+    var target_y = o_player.y;
+
+    // Update the enemy's path to move towards the player's position
+    path_start(path, move_spd2, path_action_stop, false);
+
+    // Check for attack conditions
+    var _dis = distance_to_object(o_player);
+
+        alert = true; 
+        if calc_path_timer-- <= 0 {
+
+            calc_path_timer = calc_path_delay;
+
+            if x == xp and y == yp var _type = 0 else var _type = 1;
+
+            var _found_player = mp_grid_path(global.mp_grid, path, x, y, o_player.x, o_player.y, choose(0, 1));
+
+            if _found_player {
+                path_start(path, move_spd2, path_action_stop, false);
+            }
+        } else {
+        if _dis <= attack_dis {
+            path_end();
+            state = states.ATTACK;
+        }
+    }
+}
+
 
 	
 function enemy_anim(){

@@ -13,7 +13,6 @@ attack_cooldown = 75;
 damage = 2;
 knockback_time = 10;
 
-move_spd = 2;
-move_spd2 = 6;
+move_spd = 6;
 calc_path_delay = 30;
 calc_path_timer = irandom(60);

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.damage = 30;
+global.damage = 5;
 range = 320;
 owner_id = noone;
 knockback_time = 1;

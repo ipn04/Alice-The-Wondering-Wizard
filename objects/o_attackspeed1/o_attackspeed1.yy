@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"o_attackspeed1",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"o_attackspeed1",
   "overriddenProperties":[],

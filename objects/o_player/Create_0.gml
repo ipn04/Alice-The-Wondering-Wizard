@@ -15,9 +15,9 @@ levelcount = 0;
 aim_dir = 0;
 wand_dis = 22;
 wand_dis_y = 50;
-fire_rate = 8;
+fire_rate = 18;
 can_attack = true;
-arrow_speed = 8;
+arrow_speed = 12;
 global.damage = 30;
 
 my_wand = instance_create_layer(x, y, "Instances", o_wand);

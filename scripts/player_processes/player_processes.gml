@@ -80,8 +80,8 @@ function check_fire() {
 			
 			var _dir = point_direction(x, y, mouse_x, mouse_y);
 			
-			var offsetX = 100 * cos(degtorad(aim_dir));
-			var offsetY = 100 * sin(degtorad(aim_dir));
+			var offsetX = cos(degtorad(aim_dir));
+			var offsetY = sin(degtorad(aim_dir));
 			var _inst = instance_create_layer(my_wand.x + offsetX, my_wand.y - offsetY, "Arrow", o_arrow);
 			
 			with(_inst) {
@@ -103,7 +103,7 @@ function level_up(){
 	o_player.stocklevel += 1;
 	o_player.experience = 0;
 	o_leveluphandler.levelpause = true;
-	ability_give()
+	//ability_give() //
 	if (o_player.levelcount >= 3) {
             o_player.exp_max += 1;
             o_player.levelcount = 0;

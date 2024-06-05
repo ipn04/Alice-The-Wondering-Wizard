@@ -34,4 +34,4 @@ switch (irandom(3)) {
 instance_create_layer(spawn_x, spawn_y, "Enemy", o_enemy);
 
 // Reset the alarm
-alarm[0] = 30;
+alarm[0] = 60;
