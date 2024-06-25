@@ -10,10 +10,13 @@ function reset_variables() {
 }
 
 function get_input(){
-	if keyboard_check(ord("A")) left = 1;
-	if keyboard_check(ord("D")) right = 1;
-	if keyboard_check(ord("W")) up = 1;
-	if keyboard_check(ord("S")) down = 1;
+	if (o_leveluphandler.levelpause==false) {
+		if keyboard_check(ord("A")) left = 1;
+		if keyboard_check(ord("D")) right = 1;
+		if keyboard_check(ord("W")) up = 1;
+		if keyboard_check(ord("S")) down = 1;
+	}
+
 }
 
 function calc_movement(){
@@ -82,14 +85,19 @@ function check_fire() {
 			
 			var offsetX = cos(degtorad(aim_dir));
 			var offsetY = sin(degtorad(aim_dir));
-			var _inst = instance_create_layer(my_wand.x + offsetX, my_wand.y - offsetY, "Arrow", o_arrow);
 			
-			with(_inst) {
-				speed = other.arrow_speed;
-				direction = _dir;
-				image_angle = _dir;
-				owner_id = other;
+			if (o_leveluphandler.levelpause==false) {
+				var _inst = instance_create_layer(my_wand.x + offsetX, my_wand.y - offsetY, "Arrow", o_arrow);
+				with(_inst) {
+					speed = other.arrow_speed;
+					direction = _dir;
+					image_angle = _dir;
+					owner_id = other;
+				}
 			}
+			
+			
+
 		}
 	}
 }

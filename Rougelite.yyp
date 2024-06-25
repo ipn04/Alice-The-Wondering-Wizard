@@ -38,7 +38,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"Rougelite",
   "resources":[
@@ -65,6 +65,7 @@
     {"id":{"name":"s_EnemySpawner","path":"objects/s_EnemySpawner/s_EnemySpawner.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"check_for_player","path":"scripts/check_for_player/check_for_player.yy",},},
+    {"id":{"name":"checkForZero","path":"scripts/checkForZero/checkForZero.yy",},},
     {"id":{"name":"enemy_processes","path":"scripts/enemy_processes/enemy_processes.yy",},},
     {"id":{"name":"entity_processes","path":"scripts/entity_processes/entity_processes.yy",},},
     {"id":{"name":"macros_enums","path":"scripts/macros_enums/macros_enums.yy",},},

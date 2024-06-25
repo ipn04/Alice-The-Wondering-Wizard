@@ -18,7 +18,7 @@ wand_dis_y = 50;
 fire_rate = 18;
 can_attack = true;
 arrow_speed = 12;
-global.damage = 30;
+global.damage = 5;
 
 my_wand = instance_create_layer(x, y, "Instances", o_wand);
 

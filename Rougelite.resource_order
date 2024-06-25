@@ -41,6 +41,7 @@
     {"name":"o_wand","order":5,"path":"objects/o_wand/o_wand.yy",},
     {"name":"o_xporb","order":13,"path":"objects/o_xporb/o_xporb.yy",},
     {"name":"check_for_player","order":1,"path":"scripts/check_for_player/check_for_player.yy",},
+    {"name":"checkForZero","order":7,"path":"scripts/checkForZero/checkForZero.yy",},
     {"name":"enemy_processes","order":2,"path":"scripts/enemy_processes/enemy_processes.yy",},
     {"name":"entity_processes","order":3,"path":"scripts/entity_processes/entity_processes.yy",},
     {"name":"macros_enums","order":4,"path":"scripts/macros_enums/macros_enums.yy",},
